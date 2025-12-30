@@ -1,0 +1,46 @@
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes waveSecondary {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave-primary {
+  animation: wave 20s linear infinite;
+}
+
+.animate-wave-secondary {
+  animation: waveSecondary 28s linear infinite;
+  animation-delay: -5s;
+}
+
+/* Add subtle floating effect for depth */
+.animate-wave-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

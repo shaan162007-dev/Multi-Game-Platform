@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Game Platform</title>
+    <style>
+      body { margin: 0; background: #0f172a; }
+      #root { 
+        position: fixed;
+        inset: 0;
+        background: #0f172a;
+      }
+
+      /* CREATOR INFO BUTTON */
+      .creator-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 1.5rem;
+        z-index: 1001;
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        transition: all 0.3s;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      .creator-btn:hover {
+        transform: scale(1.1) rotate(180deg);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+      }
+
+      .creator-card {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 320px;
+        background: rgba(30, 41, 59, 0.95);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 28px;
+        display: none;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        z-index: 1001;
+        color: #f8fafc;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      .creator-card h4 {
+        margin: 0 0 12px 0;
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+
+      .creator-card p {
+        margin: 8px 0;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .creator-card a {
+        color: #60a5fa;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .creator-card a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <button class="creator-btn" id="c-btn">i</button>
+    <div class="creator-card" id="c-card">
+      <p style="margin:0; font-size: 15px; opacity: 1.0;"><b><i><u>Developer & Designer:-</u></i></b></p>
+      <h4>SHAAN MANDAL</h4>
+      <p style="margin:0; font-size: 14px; opacity: 0.8;">Contact via Email:</p>
+      <a href="mailto:shaan162007@gmail.com">shaan162007@gmail.com</a>
+      <p style="margin:0; font-size: 11px; opacity: 0.6; margin-top: 8px;"><i>For any issues or feedback</i></p>
+    </div>
+
+    <script type="module" src="/src/index.tsx"></script>
+
+    <script>
+      const cBtn = document.getElementById('c-btn');
+      const cCard = document.getElementById('c-card');
+
+      cBtn.onclick = (e) => {
+        e.stopPropagation();
+        cCard.style.display = cCard.style.display === 'block' ? 'none' : 'block';
+      };
+
+      document.onclick = () => {
+        cCard.style.display = 'none';
+      };
+      
+      cCard.onclick = (e) => e.stopPropagation();
+    </script>
+  </body>
+</html>
